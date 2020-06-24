@@ -153,6 +153,9 @@ public class NoteActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_cancel) {
             mIsCanceling = true;
+            Intent intent = new Intent(NoteActivity.this, NoteListActivity.class);
+            startActivity(intent);
+            NoteActivity.this.finish();
         }
 
         return super.onOptionsItemSelected(item);
