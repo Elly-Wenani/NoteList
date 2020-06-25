@@ -134,10 +134,20 @@ public class NoteActivity extends AppCompatActivity {
         mNote.setText(mViewModel.mOriginalNoteText);
     }
 
+    //Disables next item icon on the menu when it reaches the last item
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item = menu.findItem(R.id.action_next);
+        int lastNoteIndex = DataManager.getInstance().getNotes().size() -1;
+        item.setEnabled(mNotePosition < lastNoteIndex);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
     private void saveNote() {
         mNote.setCourse((CourseInfo) mSpinnerCourses.getSelectedItem());
         mNote.setTitle(mTextNoteTitle.getText().toString());
         mNote.setText(mTextNoteText.getText().toString());
+        invalidateOptionsMenu();
     }
 
     @Override
@@ -153,12 +163,22 @@ public class NoteActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_cancel) {
             mIsCanceling = true;
-            Intent intent = new Intent(NoteActivity.this, NoteListActivity.class);
-            startActivity(intent);
-            NoteActivity.this.finish();
+            finish();
+        } else if (id == R.id.action_next) {
+            moveNext();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void moveNext() {
+        saveNote(); //saved the changes of the note
+
+        ++mNotePosition; //advance to the next note
+        mNote = DataManager.getInstance().getNotes().get(mNotePosition);
+
+        saveOriginalValue(); //get the original values of the note
+        displayNote(mSpinnerCourses, mTextNoteTitle, mTextNoteText); //display the values
     }
 
     //Sends email and inserts a few details for the user
