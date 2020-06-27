@@ -16,10 +16,13 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
     </group>
-    <item android:title="Communication" >
-        <menu >
-            <item android:title="Share" />
-            <item android:title="Rate" />
-        </menu>
-    </item>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Communication">
+            <menu>
+                <item android:title="Share" />
+                <item android:title="Rate" />
+            </menu>
+        </item>
+    </group>
 </menu>
