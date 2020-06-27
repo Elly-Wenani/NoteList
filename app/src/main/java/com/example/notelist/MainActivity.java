@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mRecyclerItems.setLayoutManager(mNotesLayoutManager);
         mRecyclerItems.setAdapter(mNoteRecyclerAdapter);
 
-        selectNavigationMenu(R.id.nav_note);
+        //selectNavigationMenu(R.id.nav_note);
     }
 
     private void selectNavigationMenu(int id) {
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void displayCourses(){
         mRecyclerItems.setLayoutManager(mCoursesLayoutManager);
         mRecyclerItems.setAdapter(mCourseRecyclerAdapter);
-        selectNavigationMenu(R.id.nav_courses);
+        //selectNavigationMenu(R.id.nav_courses);
     }
 
     @Override
