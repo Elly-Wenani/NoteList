@@ -5,23 +5,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_note"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_assignment_24"
             android:title="Notes" />
         <item
             android:id="@+id/nav_courses"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Courses" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
     </group>
 
     <group android:checkableBehavior="single">
         <item android:title="Communication">
             <menu>
-                <item android:title="Share" />
-                <item android:title="Rate" />
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Share" />
+                <item
+                    android:id="@+id/nav_rate"
+                    android:icon="@android:drawable/btn_star"
+                    android:title="Rate" />
             </menu>
         </item>
     </group>

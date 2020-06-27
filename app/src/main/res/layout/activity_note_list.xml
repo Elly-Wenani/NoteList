@@ -29,8 +29,8 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="15dp"
         android:clickable="true"
-        android:tint="#fff"
-        app:backgroundTint="#F44336"
+        android:tint="@color/whiteColor"
+        app:backgroundTint="@color/noteColor"
         app:fabCustomSize="40dp"
         app:srcCompat="@drawable/add_icon" />
 

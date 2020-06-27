@@ -16,4 +16,16 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="courseTitle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/noteColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    
+    <style name="addFab">
+        <item name="srcCompat">@drawable/ic_baseline_add_circle_24</item>
+        <item name="tint">@color/whiteColor</item>
+        <item name="backgroundTint">@color/noteColor</item>
+    </style>
+
 </resources>
