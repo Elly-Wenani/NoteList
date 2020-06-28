@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
             android:name=".NoteActivity"
             android:label="@string/edit_note_title"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -28,4 +31,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
