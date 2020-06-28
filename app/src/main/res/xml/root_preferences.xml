@@ -6,19 +6,22 @@
             android:key="user_email_address"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/pref_title_email_address" />
+            android:title="@string/pref_title_email_address"
+            app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
             android:key="user_display_name"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/pref_title_display_name" />
+            android:title="@string/pref_title_display_name"
+            app:useSimpleSummaryProvider="true" />
         <ListPreference
-            android:defaultValue="1"
+            android:defaultValue="https://twitter.com"
             android:entries="@array/pref_entries_favourite_social"
-            android:entryValues="@string/pref_value_favourite_social"
+            android:entryValues="@array/pref_values_favourite_social"
             android:key="user_favourite_social"
-            android:title="Favorite Social Network" />
+            android:title="@string/title_fav_social_network"
+            app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
 

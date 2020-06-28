@@ -1,10 +1,12 @@
 package com.example.notelist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -16,6 +18,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        //............................//
+        PreferenceManager.setDefaultValues(this, R.xml.root_preferences, false);
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -63,6 +69,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
         // mAdapterNotes.notifyDataSetChanged();
         mNoteRecyclerAdapter.notifyDataSetChanged();
+        updateNavHeader();
+    }
+
+    private void updateNavHeader() {
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView tvUserName = headerView.findViewById(R.id.title_nav_header);
+        TextView tvEmail = findViewById(R.id.email_nav_header);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        String userName = pref.getString("user_display_name", "");
+        String userEmail = pref.getString("user_email_address", "");
+
+        //tvUserName.setText(userName);
+        //tvEmail.setText(userEmail);
     }
 
     private void initializeDisplayContent() {

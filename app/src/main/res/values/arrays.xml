@@ -14,13 +14,13 @@
         <item>Facebook</item>
         <item>Google+</item>
         <item>Twitter</item>
+        <item>Instagram</item>
     </string-array>
 
-    <string name="pref_value_favourite_social">
+    <string-array name="pref_values_favourite_social">
         <item>http://facebook.com</item>
         <item>plus.google.com</item>
         <item>https://twitter.com</item>
-    </string>
-    
-    <string-array name="pref_default_favourite_social">http://facebook.com</string-array>
+        <item>https://instagram.com</item>
+    </string-array>
 </resources>
